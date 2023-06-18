@@ -1,14 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import PageHome from './components/Home/PageHome'
+import PagePlants from './components/PlantsPage/PagePlants';
+import FooterComponent from './components/Home/FoterSection'
 
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center ">
+    <ScrollView >
+
       <PageHome />
-      <StatusBar style="auto" />
-    </View>
+      <PagePlants />
+      <FooterComponent></FooterComponent>
+    </ScrollView>
   );
 }

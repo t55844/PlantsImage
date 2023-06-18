@@ -11,7 +11,7 @@ export default function MainSection(props) {
                     source={require('../../assets/home-flowers.webp')}
                 />
             </View>
-            <Text className="text-white p-2 text-xl">Many plant species have medicinal properties and are used in traditional medicine. For example, the bark of the willow tree contains salicin, a compound used to develop aspirin.</Text>
+            <Text className="text-white p-2 text-xl ">Many plant species have medicinal properties and are used in traditional medicine. For example, the bark of the willow tree contains salicin, a compound used to develop aspirin.</Text>
 
             <Button
                 title='"Learn More"'

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import MainSection from './MainSection';
-import FooterComponent from './FoterSection';
 
 export default function PageHome(props) {
     return (
@@ -10,7 +9,6 @@ export default function PageHome(props) {
                 <Text className=" text-white text-center text-3xl border-b-4 border-white mb-2 " >Welcome to PlantsImage !!!</Text>
             </View>
             <MainSection></MainSection>
-            <FooterComponent></FooterComponent>
         </View>
     );
 }
