@@ -9,6 +9,16 @@ interface PropsPlantsList {
 
 export default function PlantsList(props: PropsPlantsList) {
     const { plants } = props
+
+    const imageLinkOn = (item) => {
+        if (item.default_image != null) {
+            if (typeof item.default_image.original_url === 'string') return item.default_image.original_url
+            if (typeof item.default_image.regular_url === 'string') return item.default_image.regular_url
+            if (typeof item.default_image.medium_url === 'string') return item.default_image.medium_url
+            if (typeof item.default_image.small_url === 'string') return item.default_image.small_url
+        }
+        return ''
+    }
     if (plants.length != 0) return (
         <SafeAreaView style={{
             flex: 1,
@@ -16,10 +26,11 @@ export default function PlantsList(props: PropsPlantsList) {
 
             {plants.map((item) =>
                 <PlantCard
-                    conditions={'Cyle: ' + item.cycle + ',' + 'Watering: ' + item.watering + ',' + 'SunLight: ' + item.sunlight + '.'}
-                    image={item.default_image.original_url}
+                    conditions={'Cyle: ' + item.cycle + '\n' + 'Watering: ' + item.watering + '\n' + 'SunLight: ' + item.sunlight + '.'}
+                    image={imageLinkOn(item)}
                     name={item.common_name}
                     scientificName={item.scientific_name}
+                    id={item.id}
                     key={item.id} />)}
 
 

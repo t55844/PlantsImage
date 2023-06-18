@@ -22,9 +22,11 @@ export default function PagePlants(props) {
         const request = await fetch(url(text))
         const jsonData = await request.json()
 
-        //jsonData.data.forEach(item => console.log('ITEM NUMERO: ' + item.id + '/' + item))
-        //console.log('Buscando plantas REQUEST' + request)
-        //console.log('Buscando plantas JSON' + jsonData.data)
+        if (typeof jsonData != 'object' || typeof request != 'object') {
+            setLoodings('error')
+            return
+        }
+
         setPlants(jsonData.data)
         setLoodings('complete')
     }
