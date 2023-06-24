@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, ProgressBarAndroid } from 'react-native';
 import SearchBar from './SearchBar';
 import PlantsList from './PlantsList';
 
@@ -31,14 +31,16 @@ export default function PagePlants(props) {
         setLoodings('complete')
     }
     return (
-        <View className="bg-emerald-700">
+        <ScrollView>
+            <View className="bg-emerald-700 w-screen">
 
-            <SearchBar getSearchText={getSearchText} />
+                <SearchBar getSearchText={getSearchText} />
 
-            {loodings == 'loading' ? <Text>Loading....</Text> :
-                loodings == "error" ? <Text>Error</Text> :
-                    <PlantsList plants={plants} />}
-        </View>
+                {loodings == 'loading' ? <ProgressBarAndroid /> :
+                    loodings == "error" ? <Text>Error</Text> :
+                        <PlantsList plants={plants} />}
+            </View>
+        </ScrollView>
     );
 }
 
