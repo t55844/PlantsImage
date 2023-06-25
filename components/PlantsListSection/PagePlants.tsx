@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, ScrollView, ProgressBarAndroid } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native';
 import SearchBar from './SearchBar';
 import PlantsList from './PlantsList';
 
@@ -36,7 +36,7 @@ export default function PagePlants(props) {
 
                 <SearchBar getSearchText={getSearchText} />
 
-                {loodings == 'loading' ? <ProgressBarAndroid /> :
+                {loodings == 'loading' ? <ActivityIndicator size="large" /> :
                     loodings == "error" ? <Text>Error</Text> :
                         <PlantsList plants={plants} />}
             </View>

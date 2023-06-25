@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ImageSourcePropType } from 'react-native';
+import FavoriteButton from './FavoriteButton';
 
 interface PlantCardProps {
     image: ImageSourcePropType;
@@ -17,10 +18,15 @@ function PlantCard(props: PlantCardProps) {
             <Text className="text-xl">#{id}</Text>
             <Image source={{ uri: image }} className={`h-40 w-full mb-4`} />
             <Text className={`text-lg font-bold`}>{name}</Text>
-            <Text className={`text-gray-500 mb-2`}>
-                <Text className={`text-sm text-gray-600 font-bold`}>Scientific name: </Text>{scientificName}
-            </Text>
-            <Text className={`text-sm text-gray-600`}>{conditions}</Text>
+            <View className="flex flex-row justify-start items-center">
+                <View className="flex flex-col justify-around items-start mr-20">
+                    <Text className={`text-gray-500 mb-2`}>
+                        <Text className={`text-sm text-gray-600 font-bold`}>Scientific name: </Text>{scientificName}
+                    </Text>
+                    <Text className={`text-sm text-gray-600`}>{conditions}</Text>
+                </View>
+                <FavoriteButton />
+            </View>
         </View>
     );
 };
