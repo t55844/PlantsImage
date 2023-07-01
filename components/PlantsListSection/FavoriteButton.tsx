@@ -6,9 +6,9 @@ import { saveFavorite } from '../../JS/firebase';
 export default function FavoriteButton(props: { info: { id: number, email: string } }) {
     const [favorite, setFavorite] = useState<boolean>(false)
     const { info } = props
-    function clickToFavorite() {
+    async function clickToFavorite() {
         setFavorite(!favorite)
-        const response = saveFavorite(info)
+        const response = await saveFavorite(info)
         console.log('clicki To Favorite' + response)
     }
     function clickToUnfavorite() {

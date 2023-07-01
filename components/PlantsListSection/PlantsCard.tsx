@@ -14,7 +14,6 @@ function PlantCard(props: PlantCardProps) {
     const { image, name, scientificName, conditions, id } = props;
     const email = 'bob1212@gmail.com';
 
-    console.log(image)
     return (
         <View className={`bg-white rounded-lg shadow-md p-4 m-1 mb-4 `}>
             <Text className="text-xl">#{id}</Text>
