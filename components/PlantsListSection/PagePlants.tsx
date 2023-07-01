@@ -26,7 +26,6 @@ export default function PagePlants(props) {
             setLoodings('error')
             return
         }
-        console.table(jsonData)
         setPlants(jsonData.data)
         setLoodings('complete')
     }
